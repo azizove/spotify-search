@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
+import { TextField, Button, Grid } from '@mui/material';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -7,20 +8,42 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = useCallback(() => {
+  const textFieldStyle = {
+    width: '100%',
+  };
+
+  const buttonStyle = {
+    marginTop: 0,
+    marginLeft: 10,
+    height: '100%',
+  };
+
+  const handleSearch = () => {
     onSearch(searchQuery);
-  }, [onSearch, searchQuery]);
+  };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search for tracks"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-    </div>
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6} md={8}>
+        <TextField
+          variant="outlined"
+          label="Search for tracks"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={textFieldStyle}
+        />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSearch}
+          style={buttonStyle}
+        >
+          Search
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 

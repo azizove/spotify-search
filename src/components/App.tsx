@@ -5,6 +5,9 @@ import SearchResults from './SearchResults';
 import { useSpotifyApi } from '../hooks/useSpotifyApi';
 import { useSearchSpotifyTracks } from '../hooks/useSearchSpotifyTracks';
 import { Track } from '@spotify/web-api-ts-sdk';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../style/theme';
+import { Container, CssBaseline } from '@mui/material';
 
 const App: React.FC = () => {
   const spotifyApi = useSpotifyApi(process.env.REACT_APP_SPOTIFY_CLIENT_ID??"", process.env.REACT_APP_SPOTIFY_CLIENT_SECRET??"");
@@ -39,12 +42,15 @@ const App: React.FC = () => {
   }, [fetchSpotifyTracks]);
 
   return (
-    <div>
-      <SearchBar onSearch={fetchSpotifyTracks} />
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      {searchResults && <SearchResults searchResults={searchResults} />}
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container style={{ margin: '20px' }}>
+        <SearchBar onSearch={fetchSpotifyTracks} />
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error}</p>}
+        {searchResults && <SearchResults searchResults={searchResults} />}
+      </Container>
+    </ThemeProvider>
   );
 };
 
