@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Spotify Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application that allows users to search for tracks on Spotify and view the results.
 
-## Available Scripts
+## Deployment
 
-In the project directory, you can run:
+The app is deployed and can be accessed online at the following link:
 
-### `npm start`
+[Spotify Search App](https://spotify-search-8klef9shj-azelouarak.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Description
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The Spotify Search App provides an intuitive interface for users to search for tracks on Spotify. It displays search results in a visually appealing format, making it easy for users to discover new music. The app leverages the Spotify API to fetch track data, and it allows users to click on track names to listen to a preview of the song on Spotify.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+List of key features:
 
-### `npm run build`
+- **Track Search**: Users can enter a search query to find tracks on Spotify.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React: A JavaScript library for building user interfaces.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- TypeScript: A statically typed superset of JavaScript.
 
-### `npm run eject`
+- Material-UI: A popular React UI framework for creating a consistent and attractive user interface.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- @spotify/web-api-ts-sdk: A TypeScript SDK for interacting with the Spotify Web API.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To run the app locally on your machine, follow these steps:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Clone this repository to your local machine:
 
-## Learn More
+   ```bash
+   git clone https://github.com/azizove/spotify-search
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Navigate to the project directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```bash
+    cd spotify-search-app
+
+3. Install project dependencies:
+
+    ```bash
+    yarn install
+
+4. Create a .env file at the project root and add your Spotify access token:
+
+    ```bash
+    REACT_APP_SPOTIFY_CLIENT_ID=clientId
+    REACT_APP_SPOTIFY_CLIENT_SECRET=clientSecret
+
+5.  Start the development server:
+
+    ```bash
+    yarn start
+
+6. Open your browser and access the app at http://localhost:3000.
+
+## Usage
+
+- Enter a search query in the search bar.
+- Click the "Search" button to find tracks on Spotify.
+- Browse the search results in track cards.
+- Click on a track name to listen to a song preview on Spotify.
+-vClick on the "Listen on Spotify" link to open the Spotify track page
